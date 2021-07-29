@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:sample_app/ViewModels/BottomIndexProvider.dart';
-
-final bottomIndexProvider = StateNotifierProvider<BottomIndexProvider, int>((ref) => BottomIndexProvider());
+import 'package:sample_app/main.dart';
 
 // BottomNavigationBarのパーツ
 class BottomNavBar extends StatelessWidget {
