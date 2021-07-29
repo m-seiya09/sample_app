@@ -17,15 +17,17 @@ void main()
 }
 
 class MyApp extends StatelessWidget {
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Consumer(
-        builder: (context, watch, child)  {
+        builder: (context, watch, child) {
           final int _currentIndex = watch(bottomIndexProvider);
           final List<Widget> _childPages = [Search(), Favorite()];
 
