@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:sample_app/Screen/Main/search.dart';
 import 'package:sample_app/Utils/text_validator.dart';
 
 class SearchForm extends StatelessWidget {
@@ -33,7 +35,7 @@ class SearchForm extends StatelessWidget {
             RaisedButton(
               child: const Text('検索'),
               onPressed: () {
-                
+                context.read(searchPageProvider.notifier).changePage('result');
               },
             )
           ],

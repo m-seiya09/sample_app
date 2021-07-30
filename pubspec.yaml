@@ -16,6 +16,7 @@ dependencies:
   flutter_riverpod: ^0.14.0
   freezed_annotation: ^0.14.0
   webview_flutter: ^2.0.0
+  chopper: ^4.0.0-nullsafety.1
 
   cupertino_icons: ^1.0.2
 
@@ -25,6 +26,7 @@ dev_dependencies:
 
   freezed: ^0.14.0
   build_runner: ^2.0.0
+  chopper_generator: ^4.0.0-nullsafety.1
 
 flutter:
 
