@@ -27,11 +27,11 @@ class SearchPageProvider extends StateNotifier<int> {
     }
   }
 
-  void search() async
+  void search()
   {
     try {
-      final result = await _articleRepository.fetchArticleByTitle('php');
-
+      final result = _articleRepository.fetchArticleByTitle('php');
+      print(result);
       changePage('result');
 
     } on Exception catch(e) {

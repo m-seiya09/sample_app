@@ -5,8 +5,10 @@ class TextValidator {
   {
     String? message;
 
-    if (value == null || value.isEmpty) message = '入力されていません';
-
+    if (value == null || value.isEmpty) {
+      message = '入力されていません';
+    }
+    print(message);
     return message;
   }
 }
