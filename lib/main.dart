@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:sample_app/Screen/Main/favorite.dart';
-import 'package:sample_app/Screen/Main/search.dart';
-import 'package:sample_app/Screen/Parts/AppBar/header.dart';
-import 'package:sample_app/ViewModels/bottom_index_provider.dart';
-import 'package:sample_app/Screen/Parts/Bottom/bottom_nav_bar.dart';
+import 'package:sample_app/screen/main/favorite.dart';
+import 'package:sample_app/screen/main/search.dart';
+import 'package:sample_app/screen/parts/app_bar/header.dart';
+import 'package:sample_app/view_models/bottom_index_provider.dart';
+import 'package:sample_app/screen/Parts/Bottom/bottom_nav_bar.dart';
 
 final bottomIndexProvider = StateNotifierProvider<BottomIndexProvider, int>((ref) => BottomIndexProvider());
 void main()

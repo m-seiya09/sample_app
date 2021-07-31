@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sample_app/Screen/Parts/AppBar/header.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:sample_app/screen/parts/app_bar/header.dart';
+
 
 class ArticleDisplay extends StatelessWidget {
 

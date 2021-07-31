@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:sample_app/Screen/Main/search.dart';
-import 'package:sample_app/Utils/text_validator.dart';
+import 'package:sample_app/utils/text_validator.dart';
+import 'package:sample_app/view_models/search_page_provider.dart';
 
 class SearchForm extends StatelessWidget {
 
@@ -24,18 +24,14 @@ class SearchForm extends StatelessWidget {
                 border: OutlineInputBorder(),
                 hintText: 'flutter'
               ),
-              autovalidate: true,
-              validator: (value) {
-                final result = TextValidator.validate(value);
-                // if (result['status']) 
-
-                return result['message'];
-              },
+              validator: (value) => TextValidator.validate(value)
             ),
             RaisedButton(
               child: const Text('検索'),
               onPressed: () {
-                context.read(searchPageProvider.notifier).changePage('result');
+                if (this._formKey.currentState.validate()) {
+                  context.read(searchPageProvider.notifier).search();
+                }
               },
             )
           ],

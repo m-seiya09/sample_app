@@ -1,24 +1,12 @@
-
 // 項目に対するバリデーション
 class TextValidator {
 
-  static Map<String, dynamic> validate(String value)
+  static String validate(String value)
   {
-    final Map<String, int> status = {
-      'success': 1,
-      'fail': 0
-    };
-    // 結果コード初期値
-    Map<String, dynamic> result = {
-      'status': status['success'],
-      'message': null
-    };
+    String message;
 
-    if (value.isEmpty) {
-      result['status'] = status['fail'];
-      result['message'] = '入力されていません';
-    }
+    if (value == null || value.isEmpty) message = '入力されていません';
 
-    return result;
+    return message;
   }
 }

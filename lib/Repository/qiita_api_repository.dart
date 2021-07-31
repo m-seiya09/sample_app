@@ -1,6 +1,6 @@
 import 'package:chopper/chopper.dart';
 
-import 'package:sample_app/Repository/ABC/qiita_api.dart';
+import 'package:sample_app/repository/abc/qiita_api.dart';
 
 class QiitaApiRepository {
   static final String baseUrl = 'https://qiita.com';
@@ -16,7 +16,7 @@ class QiitaApiRepository {
     this._client = QiitaApi.create(chopperClient);
   }
 
-  Future<Map> fetchArticleByTitle(String title) async
+  Future<List> fetchArticleByTitle(String title) async
   {
     /**
      * titleで記事を検索する
@@ -25,11 +25,10 @@ class QiitaApiRepository {
     final Response<dynamic> responce = await this._client.fetchArticleByTitle(titleName: title);
 
     if (responce.isSuccessful) {
-      final responceBodyJson = responce.body as Map<int, dynamic>;
-
+      final responceBodyJson = responce.body as List;
       return responceBodyJson;
     } else {
-      return {};
+      return [];
     }
   }
 }

@@ -20,7 +20,7 @@ class _$QiitaApi extends QiitaApi {
   Future<Response<dynamic>> fetchArticleByTitle(
       {String titleName}) {
     final $url =
-        '/api/v2/items?query=title:$titleName';
+        '/api/v2/items?query=title:${titleName}';
     final $request = Request('GET', $url, client.baseUrl);
     return client.send<dynamic, dynamic>($request);
   }
