@@ -1,15 +1,16 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:state_notifier/state_notifier.dart';
 
-import 'package:sample_app/repository/qiita_api_repository.dart';
+import 'package:sample_app/repository/article_repository.dart';
 
-final searchPageProvider = StateNotifierProvider<SearchPageProvider, int>((_) => SearchPageProvider());
+final searchPageProvider 
+= StateNotifierProvider<SearchPageProvider, int>((_) => SearchPageProvider());
 
 class SearchPageProvider extends StateNotifier<int> {
 
-  final QiitaApiRepository _qiitaApiRepository = QiitaApiRepository();
-
   SearchPageProvider(): super(0);
+
+  final ArticleRepository _articleRepository = ArticleRepository();
 
   final Map<String, int> _pageIndex = {
     'search': 0,
@@ -21,16 +22,18 @@ class SearchPageProvider extends StateNotifier<int> {
     /**
      * ページを切り替える
      */
-    AsyncValue.data(this._pageIndex[key]);
+    if (key == 'search' || key == 'result') {
+      state = _pageIndex[key]!;
+    }
   }
 
   void search() async
   {
     try {
-      List result = await this._qiitaApiRepository.fetchArticleByTitle('php');
-      print('取得終了');
-      print(result[1]['title']);
-      this.state = this._pageIndex['result'];
+      final result = await _articleRepository.fetchArticleByTitle('php');
+
+      changePage('result');
+
     } on Exception catch(e) {
       print('==========error=============');
       print(e);

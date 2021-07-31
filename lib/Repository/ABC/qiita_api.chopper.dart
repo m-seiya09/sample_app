@@ -8,7 +8,7 @@ part of 'qiita_api.dart';
 
 // ignore_for_file: always_put_control_body_on_new_line, always_specify_types, prefer_const_declarations
 class _$QiitaApi extends QiitaApi {
-  _$QiitaApi([ChopperClient client]) {
+  _$QiitaApi([ChopperClient? client]) {
     if (client == null) return;
     this.client = client;
   }
@@ -18,7 +18,7 @@ class _$QiitaApi extends QiitaApi {
 
   @override
   Future<Response<dynamic>> fetchArticleByTitle(
-      {String titleName}) {
+      {String? titleName}) {
     final $url =
         '/api/v2/items?query=title:${titleName}';
     final $request = Request('GET', $url, client.baseUrl);

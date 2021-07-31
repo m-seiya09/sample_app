@@ -24,12 +24,14 @@ class SearchForm extends StatelessWidget {
                 border: OutlineInputBorder(),
                 hintText: 'flutter'
               ),
-              validator: (value) => TextValidator.validate(value)
+              validator: (String? value) {
+                TextValidator.validate(value);
+              }
             ),
             RaisedButton(
               child: const Text('検索'),
               onPressed: () {
-                if (this._formKey.currentState.validate()) {
+                if (_formKey.currentState!.validate()) {
                   context.read(searchPageProvider.notifier).search();
                 }
               },

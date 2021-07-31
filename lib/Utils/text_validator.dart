@@ -1,9 +1,9 @@
 // 項目に対するバリデーション
 class TextValidator {
 
-  static String validate(String value)
+  static String? validate(String? value)
   {
-    String message;
+    String? message;
 
     if (value == null || value.isEmpty) message = '入力されていません';
 
