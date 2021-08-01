@@ -5,9 +5,7 @@ import 'package:sample_app/screen/main/favorite.dart';
 import 'package:sample_app/screen/main/search.dart';
 import 'package:sample_app/screen/parts/app_bar/header.dart';
 import 'package:sample_app/view_models/bottom_index_provider.dart';
-import 'package:sample_app/screen/Parts/Bottom/bottom_nav_bar.dart';
-
-final bottomIndexProvider = StateNotifierProvider<BottomIndexProvider, int>((ref) => BottomIndexProvider());
+import 'package:sample_app/screen/parts/bottom/bottom_nav_bar.dart';
 void main()
 {
   runApp(
@@ -29,11 +27,11 @@ class MyApp extends StatelessWidget {
       ),
       home: Consumer(
         builder: (context, watch, child) {
-          final int _currentIndex = watch(bottomIndexProvider);
-          final List<Widget> _childPages = [Search(), Favorite()];
+          final _currentIndex = watch(bottomIndexProvider);
+          final _childPages = [Search(), Favorite()];
 
           return Scaffold(
-            appBar: Header("Sample App"),
+            appBar: Header('Sample App'),
             body: IndexedStack(
               index: _currentIndex,
               children: _childPages,

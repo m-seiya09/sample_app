@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:sample_app/main.dart';
+import 'package:sample_app/view_models/bottom_index_provider.dart';
 
 // BottomNavigationBarのパーツ
 class BottomNavBar extends StatelessWidget {
@@ -12,17 +12,17 @@ class BottomNavBar extends StatelessWidget {
   {
     return Consumer(
        builder: (context, watch, child)  {
-        final int _currentIndex = watch(bottomIndexProvider);
+        final _currentIndex = watch(bottomIndexProvider);
 
         return BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.search),
-              title: Text('さがす')
+              label: 'さがす'
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite),
-              title: Text('お気に入り')
+              label: 'お気に入り'
             )
           ],
           currentIndex: _currentIndex,

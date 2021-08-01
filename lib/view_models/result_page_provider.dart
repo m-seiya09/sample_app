@@ -41,7 +41,6 @@ class ResultPageProvider extends StateNotifier<ResultVm> {
       pagingController.appendLastPage(_convertResult);
       state = state.copyWith(articles: _convertResult);
     }
-    print(state.currentPage);
   }
 
   Map<String, String> _extract(dynamic val)
