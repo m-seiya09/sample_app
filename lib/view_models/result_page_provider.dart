@@ -5,17 +5,17 @@ import 'package:sample_app/view_models/search_page_provider.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 import 'package:sample_app/models/article.dart';
-import 'package:sample_app/view_models/state/result_vm.dart';
+import 'package:sample_app/view_models/state/result_state.dart';
 
 // prividerの宣言
 final resultPageProvider = 
-      StateNotifierProvider.autoDispose<ResultPageProvider, ResultVm>(
+      StateNotifierProvider.autoDispose<ResultPageProvider, ResultState>(
         (ref) => ResultPageProvider(ref.read)
       );
 
-class ResultPageProvider extends StateNotifier<ResultVm> {
+class ResultPageProvider extends StateNotifier<ResultState> {
 
-  ResultPageProvider(this._reader): super(const ResultVm());
+  ResultPageProvider(this._reader): super(const ResultState());
 
   /* ===== プロパティ定義 ===== */
   final pagingController 

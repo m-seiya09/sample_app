@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'result_vm.dart';
+part of 'result_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,13 +13,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ResultVmTearOff {
-  const _$ResultVmTearOff();
+class _$ResultStateTearOff {
+  const _$ResultStateTearOff();
 
-  ResultVmData call(
+  ResultStateData call(
       {int currentPage = 1,
       List<ArticleData> articles = const <ArticleData>[]}) {
-    return ResultVmData(
+    return ResultStateData(
       currentPage: currentPage,
       articles: articles,
     );
@@ -27,32 +27,33 @@ class _$ResultVmTearOff {
 }
 
 /// @nodoc
-const $ResultVm = _$ResultVmTearOff();
+const $ResultState = _$ResultStateTearOff();
 
 /// @nodoc
-mixin _$ResultVm {
+mixin _$ResultState {
   int get currentPage => throw _privateConstructorUsedError;
   List<ArticleData> get articles => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ResultVmCopyWith<ResultVm> get copyWith =>
+  $ResultStateCopyWith<ResultState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ResultVmCopyWith<$Res> {
-  factory $ResultVmCopyWith(ResultVm value, $Res Function(ResultVm) then) =
-      _$ResultVmCopyWithImpl<$Res>;
+abstract class $ResultStateCopyWith<$Res> {
+  factory $ResultStateCopyWith(
+          ResultState value, $Res Function(ResultState) then) =
+      _$ResultStateCopyWithImpl<$Res>;
   $Res call({int currentPage, List<ArticleData> articles});
 }
 
 /// @nodoc
-class _$ResultVmCopyWithImpl<$Res> implements $ResultVmCopyWith<$Res> {
-  _$ResultVmCopyWithImpl(this._value, this._then);
+class _$ResultStateCopyWithImpl<$Res> implements $ResultStateCopyWith<$Res> {
+  _$ResultStateCopyWithImpl(this._value, this._then);
 
-  final ResultVm _value;
+  final ResultState _value;
   // ignore: unused_field
-  final $Res Function(ResultVm) _then;
+  final $Res Function(ResultState) _then;
 
   @override
   $Res call({
@@ -73,30 +74,32 @@ class _$ResultVmCopyWithImpl<$Res> implements $ResultVmCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $ResultVmDataCopyWith<$Res> implements $ResultVmCopyWith<$Res> {
-  factory $ResultVmDataCopyWith(
-          ResultVmData value, $Res Function(ResultVmData) then) =
-      _$ResultVmDataCopyWithImpl<$Res>;
+abstract class $ResultStateDataCopyWith<$Res>
+    implements $ResultStateCopyWith<$Res> {
+  factory $ResultStateDataCopyWith(
+          ResultStateData value, $Res Function(ResultStateData) then) =
+      _$ResultStateDataCopyWithImpl<$Res>;
   @override
   $Res call({int currentPage, List<ArticleData> articles});
 }
 
 /// @nodoc
-class _$ResultVmDataCopyWithImpl<$Res> extends _$ResultVmCopyWithImpl<$Res>
-    implements $ResultVmDataCopyWith<$Res> {
-  _$ResultVmDataCopyWithImpl(
-      ResultVmData _value, $Res Function(ResultVmData) _then)
-      : super(_value, (v) => _then(v as ResultVmData));
+class _$ResultStateDataCopyWithImpl<$Res>
+    extends _$ResultStateCopyWithImpl<$Res>
+    implements $ResultStateDataCopyWith<$Res> {
+  _$ResultStateDataCopyWithImpl(
+      ResultStateData _value, $Res Function(ResultStateData) _then)
+      : super(_value, (v) => _then(v as ResultStateData));
 
   @override
-  ResultVmData get _value => super._value as ResultVmData;
+  ResultStateData get _value => super._value as ResultStateData;
 
   @override
   $Res call({
     Object? currentPage = freezed,
     Object? articles = freezed,
   }) {
-    return _then(ResultVmData(
+    return _then(ResultStateData(
       currentPage: currentPage == freezed
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
@@ -111,8 +114,8 @@ class _$ResultVmDataCopyWithImpl<$Res> extends _$ResultVmCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ResultVmData implements ResultVmData {
-  const _$ResultVmData(
+class _$ResultStateData implements ResultStateData {
+  const _$ResultStateData(
       {this.currentPage = 1, this.articles = const <ArticleData>[]});
 
   @JsonKey(defaultValue: 1)
@@ -124,13 +127,13 @@ class _$ResultVmData implements ResultVmData {
 
   @override
   String toString() {
-    return 'ResultVm(currentPage: $currentPage, articles: $articles)';
+    return 'ResultState(currentPage: $currentPage, articles: $articles)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ResultVmData &&
+        (other is ResultStateData &&
             (identical(other.currentPage, currentPage) ||
                 const DeepCollectionEquality()
                     .equals(other.currentPage, currentPage)) &&
@@ -147,13 +150,13 @@ class _$ResultVmData implements ResultVmData {
 
   @JsonKey(ignore: true)
   @override
-  $ResultVmDataCopyWith<ResultVmData> get copyWith =>
-      _$ResultVmDataCopyWithImpl<ResultVmData>(this, _$identity);
+  $ResultStateDataCopyWith<ResultStateData> get copyWith =>
+      _$ResultStateDataCopyWithImpl<ResultStateData>(this, _$identity);
 }
 
-abstract class ResultVmData implements ResultVm {
-  const factory ResultVmData({int currentPage, List<ArticleData> articles}) =
-      _$ResultVmData;
+abstract class ResultStateData implements ResultState {
+  const factory ResultStateData({int currentPage, List<ArticleData> articles}) =
+      _$ResultStateData;
 
   @override
   int get currentPage => throw _privateConstructorUsedError;
@@ -161,6 +164,6 @@ abstract class ResultVmData implements ResultVm {
   List<ArticleData> get articles => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $ResultVmDataCopyWith<ResultVmData> get copyWith =>
+  $ResultStateDataCopyWith<ResultStateData> get copyWith =>
       throw _privateConstructorUsedError;
 }
