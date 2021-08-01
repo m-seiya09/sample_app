@@ -7,6 +7,7 @@ part 'article.g.dart';
 abstract class Article with _$Article {
 
   const factory Article({
+    @JsonKey(name: 'id') String? id,
     @Default('') @JsonKey(name: 'title') String? title,
     @Default('') @JsonKey(name: 'name') String? name,
     @Default('') @JsonKey(name: 'profile_image_url') String? profileImageUrl,

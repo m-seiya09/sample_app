@@ -49,6 +49,7 @@ class ResultPageProvider extends StateNotifier<ResultVm> {
      * 引数で受け取ったvalから必要なデータのみ抽出し、Mapで返す
      */
     return {
+      'id': val['id'],
       'name': val['user']['name'],
       'url': val['url'],
       'title': val['title'],

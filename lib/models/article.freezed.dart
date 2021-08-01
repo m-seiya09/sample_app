@@ -21,11 +21,13 @@ class _$ArticleTearOff {
   const _$ArticleTearOff();
 
   ArticleData call(
-      {@JsonKey(name: 'title') String? title = '',
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'title') String? title = '',
       @JsonKey(name: 'name') String? name = '',
       @JsonKey(name: 'profile_image_url') String? profileImageUrl = '',
       @JsonKey(name: 'url') String? url = ''}) {
     return ArticleData(
+      id: id,
       title: title,
       name: name,
       profileImageUrl: profileImageUrl,
@@ -43,6 +45,8 @@ const $Article = _$ArticleTearOff();
 
 /// @nodoc
 mixin _$Article {
+  @JsonKey(name: 'id')
+  String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'title')
   String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'name')
@@ -62,7 +66,8 @@ abstract class $ArticleCopyWith<$Res> {
   factory $ArticleCopyWith(Article value, $Res Function(Article) then) =
       _$ArticleCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'title') String? title,
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'title') String? title,
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'profile_image_url') String? profileImageUrl,
       @JsonKey(name: 'url') String? url});
@@ -78,12 +83,17 @@ class _$ArticleCopyWithImpl<$Res> implements $ArticleCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? name = freezed,
     Object? profileImageUrl = freezed,
     Object? url = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -111,7 +121,8 @@ abstract class $ArticleDataCopyWith<$Res> implements $ArticleCopyWith<$Res> {
       _$ArticleDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'title') String? title,
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'title') String? title,
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'profile_image_url') String? profileImageUrl,
       @JsonKey(name: 'url') String? url});
@@ -129,12 +140,17 @@ class _$ArticleDataCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? name = freezed,
     Object? profileImageUrl = freezed,
     Object? url = freezed,
   }) {
     return _then(ArticleData(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -159,7 +175,8 @@ class _$ArticleDataCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ArticleData implements ArticleData {
   const _$ArticleData(
-      {@JsonKey(name: 'title') this.title = '',
+      {@JsonKey(name: 'id') this.id,
+      @JsonKey(name: 'title') this.title = '',
       @JsonKey(name: 'name') this.name = '',
       @JsonKey(name: 'profile_image_url') this.profileImageUrl = '',
       @JsonKey(name: 'url') this.url = ''});
@@ -167,6 +184,9 @@ class _$ArticleData implements ArticleData {
   factory _$ArticleData.fromJson(Map<String, dynamic> json) =>
       _$_$ArticleDataFromJson(json);
 
+  @override
+  @JsonKey(name: 'id')
+  final String? id;
   @override
   @JsonKey(name: 'title')
   final String? title;
@@ -182,13 +202,15 @@ class _$ArticleData implements ArticleData {
 
   @override
   String toString() {
-    return 'Article(title: $title, name: $name, profileImageUrl: $profileImageUrl, url: $url)';
+    return 'Article(id: $id, title: $title, name: $name, profileImageUrl: $profileImageUrl, url: $url)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is ArticleData &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.name, name) ||
@@ -203,6 +225,7 @@ class _$ArticleData implements ArticleData {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(profileImageUrl) ^
@@ -221,7 +244,8 @@ class _$ArticleData implements ArticleData {
 
 abstract class ArticleData implements Article {
   const factory ArticleData(
-      {@JsonKey(name: 'title') String? title,
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'title') String? title,
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'profile_image_url') String? profileImageUrl,
       @JsonKey(name: 'url') String? url}) = _$ArticleData;
@@ -229,6 +253,9 @@ abstract class ArticleData implements Article {
   factory ArticleData.fromJson(Map<String, dynamic> json) =
       _$ArticleData.fromJson;
 
+  @override
+  @JsonKey(name: 'id')
+  String? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'title')
   String? get title => throw _privateConstructorUsedError;
