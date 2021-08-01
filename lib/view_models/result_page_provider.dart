@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:sample_app/repository/article_repository.dart';
-import 'package:sample_app/view_models/search_page_provider.dart';
 import 'package:state_notifier/state_notifier.dart';
 
+import 'package:sample_app/repository/article_repository.dart';
+import 'package:sample_app/view_models/search_page_provider.dart';
 import 'package:sample_app/models/article.dart';
 import 'package:sample_app/view_models/state/result_state.dart';
 
@@ -26,14 +26,15 @@ class ResultPageProvider extends StateNotifier<ResultState> {
   /* ===== メソッド ===== */
   Future<void> search() async
   {
-    final _keyWord = _reader(searchPageProvider) ?? '';
+    final _keyWord = _reader(searchPageProvider).keyWord ?? '';
     final page = (state.currentPage == 0) 
           ? state.currentPage : state.currentPage + 1;
-
-    final result = await _articleRepository.fetchArticleByTitle(_keyWord, page);
+    
+    final result = 
+      await _articleRepository.fetchArticleByTitle(_keyWord, page);
     final _convertResult = result.map(
       (dynamic val) => ArticleData.fromJson(_extract(val))).toList();
-    
+
     if (page > 0) {
       pagingController.appendPage(_convertResult, _convertResult.length);
       state = state.copyWith(currentPage: page);

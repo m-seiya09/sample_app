@@ -26,6 +26,9 @@ class ArticleRepository {
     /**
      * titleで記事を検索する
      */
+    if (title.isEmpty) {
+      return <List>[];
+    }
 
     final responce =
       await _client.fetchArticleByTitle(page: page, titleName: title);
@@ -34,7 +37,6 @@ class ArticleRepository {
       final responceBodyJson = responce.body as List;
       return responceBodyJson;
     } else {
-
       return <List>[];
     }
   }

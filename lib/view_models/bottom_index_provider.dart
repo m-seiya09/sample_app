@@ -14,6 +14,6 @@ class BottomIndexProvider extends StateNotifier<int> {
     /**
      * 現在のindexを変更する
      */
-    if (this.state != index) this.state = index;
+    if (state != index) state = index;
   }
 }
