@@ -6,13 +6,17 @@ import 'package:sample_app/screen/parts/app_bar/header.dart';
 
 class ArticleDisplay extends StatelessWidget {
 
+  ArticleDisplay(this._url);
+  
+  final String? _url;
+
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
       appBar: Header('詳細表示'),
       body: WebView(
-        initialUrl: 'https://qiita.com/rydein/items/1fa1fd6046dbef837375',
+        initialUrl: _url,
         javascriptMode: JavascriptMode.unrestricted,
       )
     );

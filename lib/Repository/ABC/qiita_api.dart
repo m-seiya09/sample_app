@@ -10,6 +10,6 @@ abstract class QiitaApi extends ChopperService {
 
   @Get(path: '/items?query=title:{titleName}')
   Future<Response> fetchArticleByTitle({
-    @Path('titleName') String titleName,
+    @Path('titleName') String? titleName,
   });
 }

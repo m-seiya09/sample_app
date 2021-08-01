@@ -11,14 +11,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
   flutter_state_notifier: ^0.7.0
-  flutter_riverpod: ^0.14.0
+  flutter_hooks: ^0.17.0
   freezed_annotation: ^0.14.2
-  webview_flutter: ^2.0.0
-  chopper: ^4.0.0
-
+  hooks_riverpod: ^0.14.0
   cupertino_icons: ^1.0.2
+  chopper: ^4.0.0
+  webview_flutter: ^2.0.0
+  infinite_scroll_pagination: ^3.1.0
 
 dev_dependencies:
   flutter_test:

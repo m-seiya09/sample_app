@@ -28,6 +28,7 @@ class ArticleRepository {
     final responce = await _client.fetchArticleByTitle(titleName: title);
 
     if (responce.isSuccessful) {
+      print(responce.body.runtimeType);
       final responceBodyJson = responce.body as List;
       return responceBodyJson;
     } else {

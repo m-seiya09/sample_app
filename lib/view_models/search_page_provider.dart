@@ -1,42 +1,16 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:state_notifier/state_notifier.dart';
 
-import 'package:sample_app/repository/article_repository.dart';
+// providerの宣言
+final searchPageProvider = 
+      StateNotifierProvider<SearchPageProvider, String?>(
+        (ref) => SearchPageProvider()
+      );
 
-final searchPageProvider 
-= StateNotifierProvider<SearchPageProvider, int>((_) => SearchPageProvider());
+class SearchPageProvider extends StateNotifier<String?> {
 
-class SearchPageProvider extends StateNotifier<int> {
+  SearchPageProvider(): super(null);
 
-  SearchPageProvider(): super(0);
 
-  final ArticleRepository _articleRepository = ArticleRepository();
-
-  final Map<String, int> _pageIndex = {
-    'search': 0,
-    'result': 1
-  };
-
-  void changePage(String key)
-  {
-    /**
-     * ページを切り替える
-     */
-    if (key == 'search' || key == 'result') {
-      state = _pageIndex[key]!;
-    }
-  }
-
-  void search()
-  {
-    try {
-      final result = _articleRepository.fetchArticleByTitle('php');
-      print(result);
-      changePage('result');
-
-    } on Exception catch(e) {
-      print('==========error=============');
-      print(e);
-    }
-  }
+  void setKeyWord(String? keyWord) => state = keyWord;
 }

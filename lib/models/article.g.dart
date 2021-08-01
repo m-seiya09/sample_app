@@ -6,19 +6,19 @@ part of 'article.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Article _$_$_ArticleFromJson(Map<String, dynamic> json) {
-  return _$_Article(
+_$ArticleData _$_$ArticleDataFromJson(Map<String, dynamic> json) {
+  return _$ArticleData(
     title: json['title'] as String?,
-    userName: json['userName'] as String?,
-    userIconUrl: json['userIconUrl'] as String?,
+    name: json['name'] as String?,
+    profileImageUrl: json['profile_image_url'] as String?,
     url: json['url'] as String?,
   );
 }
 
-Map<String, dynamic> _$_$_ArticleToJson(_$_Article instance) =>
+Map<String, dynamic> _$_$ArticleDataToJson(_$ArticleData instance) =>
     <String, dynamic>{
       'title': instance.title,
-      'userName': instance.userName,
-      'userIconUrl': instance.userIconUrl,
+      'name': instance.name,
+      'profile_image_url': instance.profileImageUrl,
       'url': instance.url,
     };

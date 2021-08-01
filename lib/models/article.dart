@@ -8,10 +8,11 @@ abstract class Article with _$Article {
 
   const factory Article({
     @Default('') @JsonKey(name: 'title') String? title,
-    @Default('') @JsonKey(name: 'userName') String? userName,
-    @Default('') @JsonKey(name: 'userIconUrl') String? userIconUrl,
+    @Default('') @JsonKey(name: 'name') String? name,
+    @Default('') @JsonKey(name: 'profile_image_url') String? profileImageUrl,
     @Default('') @JsonKey(name: 'url') String? url,
-  }) = _Article;
+  }) = ArticleData;
 
-  factory Article.fromJson(Map<String, dynamic> json) => _$ArticleFromJson(json);
+  factory Article.fromJson(Map<String, dynamic> json) 
+    => _$ArticleFromJson(json);
 }
