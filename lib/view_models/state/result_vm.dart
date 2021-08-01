@@ -8,7 +8,7 @@ part 'result_vm.freezed.dart';
 abstract class ResultVm with _$ResultVm {
 
   const factory ResultVm({
-    @Default(0) int currentPage,
+    @Default(1) int currentPage,
     @Default(<ArticleData>[]) List<ArticleData> articles,
   }) = ResultVmData;
 

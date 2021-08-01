@@ -17,7 +17,7 @@ class _$ResultVmTearOff {
   const _$ResultVmTearOff();
 
   ResultVmData call(
-      {int currentPage = 0,
+      {int currentPage = 1,
       List<ArticleData> articles = const <ArticleData>[]}) {
     return ResultVmData(
       currentPage: currentPage,
@@ -113,9 +113,9 @@ class _$ResultVmDataCopyWithImpl<$Res> extends _$ResultVmCopyWithImpl<$Res>
 
 class _$ResultVmData implements ResultVmData {
   const _$ResultVmData(
-      {this.currentPage = 0, this.articles = const <ArticleData>[]});
+      {this.currentPage = 1, this.articles = const <ArticleData>[]});
 
-  @JsonKey(defaultValue: 0)
+  @JsonKey(defaultValue: 1)
   @override
   final int currentPage;
   @JsonKey(defaultValue: const <ArticleData>[])

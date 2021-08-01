@@ -14,26 +14,28 @@ class ArticleRepository {
     _client = QiitaApi.create(chopperClient);
   }
 
+  /* ===== プロパティ ===== */
   static const String baseUrl = 'https://qiita.com';
-  
   late QiitaApi _client;
 
 
-  Future<List> fetchArticleByTitle(String title) async
+  /* ===== 関数 ===== */
+
+  Future<List> fetchArticleByTitle(String title, int page) async
   {
     /**
      * titleで記事を検索する
      */
 
-    final responce = await _client.fetchArticleByTitle(titleName: title);
+    final responce =
+      await _client.fetchArticleByTitle(page: page, titleName: title);
 
     if (responce.isSuccessful) {
-      print(responce.body.runtimeType);
       final responceBodyJson = responce.body as List;
       return responceBodyJson;
     } else {
 
-      return responce.body as List;
+      return <List>[];
     }
   }
 }

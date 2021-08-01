@@ -30,7 +30,7 @@ class ResultPageProvider extends StateNotifier<ResultVm> {
     final page = (state.currentPage == 0) 
           ? state.currentPage : state.currentPage + 1;
 
-    final result = await _articleRepository.fetchArticleByTitle(_keyWord);
+    final result = await _articleRepository.fetchArticleByTitle(_keyWord, page);
     final _convertResult = result.map(
       (dynamic val) => ArticleData.fromJson(_extract(val))).toList();
     

@@ -17,8 +17,9 @@ class _$QiitaApi extends QiitaApi {
   final definitionType = QiitaApi;
 
   @override
-  Future<Response<dynamic>> fetchArticleByTitle({String? titleName}) {
-    final $url = '/api/v2/items?query=title:$titleName';
+  Future<Response<dynamic>> fetchArticleByTitle(
+      {int page = 1, String? titleName}) {
+    final $url = '/api/v2/items?page=$page&query=title:$titleName';
     final $request = Request('GET', $url, client.baseUrl);
     return client.send<dynamic, dynamic>($request);
   }

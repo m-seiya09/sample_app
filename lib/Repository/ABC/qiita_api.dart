@@ -8,8 +8,9 @@ abstract class QiitaApi extends ChopperService {
   static QiitaApi create([ChopperClient? client]) 
   => _$QiitaApi(client);
 
-  @Get(path: '/items?query=title:{titleName}')
+  @Get(path: '/items?page={page}&query=title:{titleName}')
   Future<Response> fetchArticleByTitle({
+    @Path('page') int page = 1,
     @Path('titleName') String? titleName,
   });
 }
