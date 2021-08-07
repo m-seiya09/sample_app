@@ -18,7 +18,7 @@ class _$FavoriteStateTearOff {
 
   FavoriteStateData call(
       {List<String> ids = const <String>[],
-      List<ArticleData> articles = const <ArticleData>[]}) {
+      List<FavoriteArticleData> articles = const <FavoriteArticleData>[]}) {
     return FavoriteStateData(
       ids: ids,
       articles: articles,
@@ -32,7 +32,7 @@ const $FavoriteState = _$FavoriteStateTearOff();
 /// @nodoc
 mixin _$FavoriteState {
   List<String> get ids => throw _privateConstructorUsedError;
-  List<ArticleData> get articles => throw _privateConstructorUsedError;
+  List<FavoriteArticleData> get articles => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FavoriteStateCopyWith<FavoriteState> get copyWith =>
@@ -44,7 +44,7 @@ abstract class $FavoriteStateCopyWith<$Res> {
   factory $FavoriteStateCopyWith(
           FavoriteState value, $Res Function(FavoriteState) then) =
       _$FavoriteStateCopyWithImpl<$Res>;
-  $Res call({List<String> ids, List<ArticleData> articles});
+  $Res call({List<String> ids, List<FavoriteArticleData> articles});
 }
 
 /// @nodoc
@@ -69,7 +69,7 @@ class _$FavoriteStateCopyWithImpl<$Res>
       articles: articles == freezed
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
-              as List<ArticleData>,
+              as List<FavoriteArticleData>,
     ));
   }
 }
@@ -81,7 +81,7 @@ abstract class $FavoriteStateDataCopyWith<$Res>
           FavoriteStateData value, $Res Function(FavoriteStateData) then) =
       _$FavoriteStateDataCopyWithImpl<$Res>;
   @override
-  $Res call({List<String> ids, List<ArticleData> articles});
+  $Res call({List<String> ids, List<FavoriteArticleData> articles});
 }
 
 /// @nodoc
@@ -108,7 +108,7 @@ class _$FavoriteStateDataCopyWithImpl<$Res>
       articles: articles == freezed
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
-              as List<ArticleData>,
+              as List<FavoriteArticleData>,
     ));
   }
 }
@@ -117,14 +117,15 @@ class _$FavoriteStateDataCopyWithImpl<$Res>
 
 class _$FavoriteStateData implements FavoriteStateData {
   const _$FavoriteStateData(
-      {this.ids = const <String>[], this.articles = const <ArticleData>[]});
+      {this.ids = const <String>[],
+      this.articles = const <FavoriteArticleData>[]});
 
   @JsonKey(defaultValue: const <String>[])
   @override
   final List<String> ids;
-  @JsonKey(defaultValue: const <ArticleData>[])
+  @JsonKey(defaultValue: const <FavoriteArticleData>[])
   @override
-  final List<ArticleData> articles;
+  final List<FavoriteArticleData> articles;
 
   @override
   String toString() {
@@ -156,12 +157,13 @@ class _$FavoriteStateData implements FavoriteStateData {
 
 abstract class FavoriteStateData implements FavoriteState {
   const factory FavoriteStateData(
-      {List<String> ids, List<ArticleData> articles}) = _$FavoriteStateData;
+      {List<String> ids,
+      List<FavoriteArticleData> articles}) = _$FavoriteStateData;
 
   @override
   List<String> get ids => throw _privateConstructorUsedError;
   @override
-  List<ArticleData> get articles => throw _privateConstructorUsedError;
+  List<FavoriteArticleData> get articles => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $FavoriteStateDataCopyWith<FavoriteStateData> get copyWith =>
