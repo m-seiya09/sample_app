@@ -2,15 +2,34 @@
 
 A new Flutter project.
 
-## Getting Started
+## ライブラリ
 
-This project is a starting point for a Flutter application.
+### 状態管理
 
-A few resources to get you started if this is your first Flutter project:
+* flutter_state_notifier<br>
+https://pub.dev/packages/flutter_state_notifier
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* hooks_riverpod<br>
+https://pub.dev/packages/hooks_riverpod
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### データベースライブラリ
+* moor<br>
+https://pub.dev/packages/moor <br>
+公式ドキュメント: https://moor.simonbinder.eu/docs/ <br>
+
+### http通信
+
+* chopper<br>
+https://pub.dev/packages/chopper
+
+### その他
+
+* infinite_scroll_pagination<br>
+検索結果のページネーションに使用<br>
+https://www.raywenderlich.com/14214369-infinite-scrolling-pagination-in-flutter#toc-anchor-001<br>
+https://pub.dev/packages/infinite_scroll_pagination
+
+以下moorで使用
+* sqlite3_flutter_libs
+* path_provider
+* path
